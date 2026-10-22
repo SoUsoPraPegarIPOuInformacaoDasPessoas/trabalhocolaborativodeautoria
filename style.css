@@ -1,0 +1,201 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080808;
+    color: white;
+}
+
+.fundo {
+    position: fixed;
+    inset: -15px;
+
+    background-image: url("https://cdn.agenciamural.org.br/2022/11/09151905/cidade-tiradentes_32xsp.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    filter: blur(7px);
+    transform: scale(1.05);
+    z-index: -2;
+}
+
+.sobreposicao {
+    position: fixed;
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.78),
+        rgba(10, 10, 25, 0.60),
+        rgba(0, 0, 0, 0.82)
+    );
+
+    z-index: -1;
+}
+
+.conteudo {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 25px;
+}
+
+.titulo-rgb {
+    font-size: clamp(3.5rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        magenta,
+        red
+    );
+
+    background-size: 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    animation: rgb 6s linear infinite;
+
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+}
+
+@keyframes rgb {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+.nomes {
+    max-width: 1000px;
+    font-size: clamp(1rem, 2.5vw, 1.8rem);
+    font-weight: 500;
+    color: white;
+    line-height: 1.5;
+    text-shadow: 0 2px 12px black;
+}
+
+.subtitulo {
+    margin-top: 15px;
+    margin-bottom: 45px;
+
+    color: #ffdf00;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    font-weight: bold;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    text-shadow:
+        0 0 10px rgba(255, 223, 0, 0.6),
+        0 0 25px rgba(255, 223, 0, 0.25);
+}
+
+.botao {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 20px 35px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #7b2ff7, #00c6ff);
+    color: white;
+
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-weight: bold;
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(123, 47, 247, 0.5),
+        0 0 40px rgba(0, 198, 255, 0.2);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+}
+
+.botao:hover {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+
+    box-shadow:
+        0 0 30px rgba(123, 47, 247, 0.8),
+        0 0 60px rgba(0, 198, 255, 0.5);
+}
+
+.botao:active {
+    transform: scale(0.96);
+}
+
+.seta {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.botao:hover .seta {
+    transform: translateX(5px);
+}
+
+footer {
+    position: fixed;
+    bottom: 18px;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+@media (max-width: 600px) {
+    .titulo-rgb {
+        letter-spacing: 2px;
+    }
+
+    .nomes {
+        line-height: 1.8;
+    }
+
+    .subtitulo {
+        letter-spacing: 2px;
+        margin-bottom: 35px;
+    }
+
+    .botao {
+        padding: 17px 20px;
+        gap: 8px;
+    }
+}
