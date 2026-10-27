@@ -268,28 +268,39 @@
         CIDADE TIRADENTES • TRABALHO DE CONCLUSÃO DE ANO
     </footer>
 
+    <div id="visualizador" class="visualizador">
 
-<script src="visualizador.js" defer></script>
+        <button
+            id="fecharVisualizador"
+            class="fechar-visualizador"
+            aria-label="Fechar imagem"
+        >&times;</button>
+
+        <button
+            id="imagemAnterior"
+            class="navegar-imagem anterior"
+            aria-label="Imagem anterior"
+        >&#10094;</button>
+
+        <img
+            id="imagemAmpliada"
+            src=""
+            alt="Imagem ampliada"
+        >
+
+        <button
+            id="proximaImagem"
+            class="navegar-imagem proxima"
+            aria-label="Próxima imagem"
+        >&#10095;</button>
+
+        <p id="contadorImagem" class="contador-imagem"></p>
+
+    </div>
+
+    <script src="visualizador.js" defer></script>
 </body>
 </html>
 
-
-<div id="visualizador" class="visualizador">
-    <button id="fecharVisualizador" class="fechar-visualizador">&times;</button>
-
-    <button id="imagemAnterior" class="navegar-imagem anterior">&#10094;</button>
-
-    <img id="imagemAmpliada" src="" alt="Imagem ampliada">
-
-    <button id="proximaImagem" class="navegar-imagem proxima">&#10095;</button>
-
-    <p id="contadorImagem" class="contador-imagem"></p>
-</div>
-
-<script src="visualizador.js" defer></script>
-</body>
-</html>
-
-    
 </body>
 </html>
