@@ -1,0 +1,424 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página 4 - Nossas propostas</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            color: #f4fff7;
+            background:
+                radial-gradient(circle at top left, #16844755, transparent 35%),
+                radial-gradient(circle at bottom right, #ffd44725, transparent 35%),
+                #071811;
+            line-height: 1.7;
+        }
+
+        .topo {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .link {
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border: 1px solid #ffffff40;
+            border-radius: 12px;
+            transition: 0.2s;
+        }
+
+        .link:hover {
+            background: #ffffff18;
+            transform: translateY(-2px);
+        }
+
+        .identificacao {
+            color: #c4d8c9;
+            font-size: 13px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .hero {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 0 50px;
+            text-align: center;
+        }
+
+        .etiqueta {
+            display: inline-block;
+            color: #fff0a8;
+            border: 1px solid #ffd44780;
+            background: #ffd44712;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        h1 {
+            margin: 24px auto 18px;
+            max-width: 1000px;
+            font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+            font-size: clamp(36px, 6vw, 76px);
+            line-height: 1.1;
+            color: #ffd447;
+        }
+
+        h1 span {
+            color: #69d58d;
+        }
+
+        .subtitulo {
+            max-width: 720px;
+            margin: auto;
+            color: #c4d8c9;
+            font-size: 18px;
+        }
+
+        .linha {
+            width: 100px;
+            height: 4px;
+            margin: 28px auto;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #168447, #ffd447);
+        }
+
+        main {
+            width: 92%;
+            max-width: 1000px;
+            margin: auto;
+            padding-bottom: 55px;
+        }
+
+        .secao {
+            margin: 20px 0;
+            padding: clamp(22px, 4vw, 38px);
+            border: 1px solid #c8f2d522;
+            border-radius: 22px;
+            background: #10291de8;
+            box-shadow: 0 18px 48px #0003;
+        }
+
+        .numero {
+            color: #ffd447;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            margin: 10px 0 16px;
+            font-size: clamp(24px, 3vw, 34px);
+            line-height: 1.3;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        .destaque {
+            margin-top: 22px;
+            padding: 18px 20px;
+            border-left: 4px solid #ffd447;
+            border-radius: 0 12px 12px 0;
+            background: linear-gradient(90deg, #ffd4471a, #16844715);
+        }
+
+        .destaque strong {
+            color: #fff0a8;
+        }
+
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .proposta {
+            padding: 22px;
+            border: 1px solid #c8f2d526;
+            border-radius: 17px;
+            background: #ffffff07;
+            transition: transform 0.25s, border-color 0.25s;
+        }
+
+        .proposta:hover {
+            transform: translateY(-4px);
+            border-color: #ffd44780;
+        }
+
+        .icone {
+            display: grid;
+            place-items: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 13px;
+            color: #102217;
+            background: linear-gradient(135deg, #ffd447, #7fe09b);
+            font-weight: 900;
+        }
+
+        h3 {
+            margin: 14px 0 8px;
+            font-size: 19px;
+            color: #e9ffd9;
+        }
+
+        .proposta p {
+            margin: 0;
+            color: #c4d8c9;
+        }
+
+        .conclusao {
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        .conclusao h2 {
+            color: #ffd447;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .botao {
+            display: inline-block;
+            padding: 13px 19px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            border: 1px solid #ffffff40;
+            background: #ffffff0a;
+            transition: transform 0.2s;
+        }
+
+        .botao:hover {
+            transform: translateY(-3px);
+        }
+
+        .botao.principal {
+            color: #102217;
+            border: none;
+            background: linear-gradient(100deg, #ffd447, #7fe09b);
+        }
+
+        footer {
+            padding: 25px 5%;
+            border-top: 1px solid #c8f2d51c;
+            color: #a5bdad;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 650px) {
+            .grade {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 45px;
+            }
+
+            .topo {
+                justify-content: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="topo">
+        <a class="link" href="pagina3.html">← Página 3</a>
+        <span class="identificacao">TCA • 9º ANO A</span>
+        <a class="link" href="index.html">Página inicial</a>
+    </nav>
+
+    <header class="hero">
+        <span class="etiqueta">05 — CAMINHOS PARA O FUTURO</span>
+
+        <h1>
+            <span>Nossas propostas</span><br>
+            para aprimoramento
+        </h1>
+
+        <p class="subtitulo">
+            Ideias para incentivar novas oportunidades de emprego
+            e melhorar a qualidade de vida em Cidade Tiradentes.
+        </p>
+
+        <div class="linha"></div>
+    </header>
+
+    <main>
+
+        <section class="secao">
+            <span class="numero">NOSSA IDEIA PRINCIPAL</span>
+
+            <h2>Mais oportunidades e um bairro melhor para todos</h2>
+
+            <p>
+                Propomos incentivar mais empresas a investir em Cidade
+                Tiradentes e dialogar com a Prefeitura para melhorar
+                a infraestrutura e os serviços do bairro. Também
+                consideramos importante ampliar as oportunidades de
+                trabalho para além das funções de atendimento ao cliente
+                e comércio.
+            </p>
+
+            <div class="destaque">
+                <strong>Nosso objetivo:</strong>
+                <p>
+                    Valorizar os empregos que já existem e buscar mais
+                    variedade de profissões, serviços públicos de qualidade
+                    e espaços que melhorem o dia a dia dos moradores.
+                </p>
+            </div>
+        </section>
+
+        <section class="secao">
+            <span class="numero">PROPOSTAS DO GRUPO</span>
+
+            <h2>O que poderia melhorar em Cidade Tiradentes?</h2>
+
+            <div class="grade">
+
+                <article class="proposta">
+                    <span class="icone">01</span>
+                    <h3>Atrair empresas e criar empregos</h3>
+                    <p>
+                        Incentivar empresas de diferentes setores a se
+                        instalar na região, criando oportunidades em áreas
+                        como tecnologia, administração, indústria, saúde
+                        e serviços especializados.
+                    </p>
+                </article>
+
+                <article class="proposta">
+                    <span class="icone">02</span>
+                    <h3>Qualificação profissional</h3>
+                    <p>
+                        Ampliar cursos gratuitos e parcerias com escolas
+                        técnicas para ajudar os moradores a se preparar
+                        para diferentes profissões e vagas.
+                    </p>
+                </article>
+
+                <article class="proposta">
+                    <span class="icone">03</span>
+                    <h3>Saúde e atendimento público</h3>
+                    <p>
+                        Buscar melhorias no acesso aos serviços de saúde,
+                        na qualidade do atendimento e na estrutura dos
+                        equipamentos públicos.
+                    </p>
+                </article>
+
+                <article class="proposta">
+                    <span class="icone">04</span>
+                    <h3>Transporte público</h3>
+                    <p>
+                        Propor melhorias na frequência dos ônibus, nas
+                        conexões com outras regiões e nas condições dos
+                        pontos e terminais.
+                    </p>
+                </article>
+
+                <article class="proposta">
+                    <span class="icone">05</span>
+                    <h3>Lazer, esporte e cultura</h3>
+                    <p>
+                        Cuidar de praças, quadras, parques e espaços
+                        culturais para que crianças, jovens e famílias
+                        tenham mais opções de convivência.
+                    </p>
+                </article>
+
+                <article class="proposta">
+                    <span class="icone">06</span>
+                    <h3>Meio ambiente e limpeza</h3>
+                    <p>
+                        Incentivar a coleta correta de resíduos, a
+                        conservação de áreas verdes, o plantio de árvores
+                        e ações de educação ambiental.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="secao conclusao">
+            <span class="numero">CONCLUSÃO</span>
+
+            <h2>O desenvolvimento começa com participação</h2>
+
+            <p>
+                Acreditamos que essas melhorias dependem da participação
+                dos moradores, das iniciativas das empresas e do trabalho
+                conjunto com o poder público. Com planejamento e diálogo,
+                Cidade Tiradentes pode buscar mais oportunidades
+                profissionais e melhores condições de vida para sua população.
+            </p>
+
+            <div class="botoes">
+                <a class="botao" href="pagina3.html">
+                    ← Voltar à Página 3
+                </a>
+
+                <a class="botao principal" href="index.html">
+                    Voltar à página inicial ↑
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        CIDADE TIRADENTES • TRABALHO DE CONCLUSÃO DE ANO - Site Criado por Matheus Henrique da Silva Maximo
+    </footer>
+
+</body>
+</html>
