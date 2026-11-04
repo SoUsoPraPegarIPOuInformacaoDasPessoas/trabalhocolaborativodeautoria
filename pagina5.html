@@ -88,6 +88,49 @@
             text-align: center;
         }
 
+        .qr-code {
+            position: fixed;
+            top: 50%;
+            right: 30px;
+            transform: translate(150%, -50%);
+            opacity: 0;
+            visibility: hidden;
+            width: 280px;
+            max-width: 75vw;
+            padding: 15px;
+            background: #0b0b0b;
+            border: 2px solid #69d58d;
+            border-radius: 18px;
+            box-shadow: 0 0 30px #69d58d60;
+            z-index: 9999;
+
+            transition:
+                transform 0.7s ease,
+                opacity 0.7s ease,
+                visibility 0.7s;
+        }
+
+        .qr-code.mostrar {
+            transform: translate(0, -50%);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .qr-code img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .qr-legenda {
+            color: #69d58d;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
         @media (max-width: 600px) {
             .conteudo {
                 padding: 25px 20px;
@@ -95,6 +138,11 @@
 
             p {
                 font-size: 16px;
+            }
+
+            .qr-code {
+                right: 15px;
+                width: 230px;
             }
         }
     </style>
@@ -115,7 +163,10 @@
             personalizar o visual, com as cores, os efeitos, o layout e
             a adaptação para celulares.
 
-Os textos foram desenvolvidos pelo integrante Sherman Vinícius Gonçalves e as Imagens foram conquistadas pelo Leonardo Mondoni Chaves; Site criado por Matheus Henrique da Silva Maximo
+            Os textos foram desenvolvidos pelo integrante Sherman
+            Vinícius Gonçalves e as imagens foram conquistadas pelo
+            Leonardo Mondoni Chaves; Site criado por Matheus Henrique
+            da Silva Maximo.
         </p>
 
         <a href="index.html" class="botao">
@@ -126,6 +177,29 @@ Os textos foram desenvolvidos pelo integrante Sherman Vinícius Gonçalves e as 
     <footer>
         CIDADE TIRADENTES • TRABALHO DE CONCLUSÃO DE ANO
     </footer>
+
+    <div class="qr-code" id="qrCode">
+        <img src="qr-code.png" alt="QR Code do projeto">
+        <div class="qr-legenda">
+            QR CODE • CIDADE TIRADENTES
+        </div>
+    </div>
+
+    <script>
+        const qrCode = document.getElementById("qrCode");
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key.toLowerCase() === "m" &&
+                !event.ctrlKey &&
+                !event.altKey &&
+                !event.metaKey) {
+
+                qrCode.classList.toggle("mostrar");
+            }
+
+        });
+    </script>
 
 </body>
 </html>
